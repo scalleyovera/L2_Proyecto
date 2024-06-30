@@ -18,27 +18,33 @@ import lombok.ToString;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
+
 @ToString
 public class UsuarioEntity {
 
-	 @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Integer codigo;
-	    
-	    private String nombre;
-	    
-	    private String apellido;
-	    
-	    private Integer edad;
-	    
-	    private String usuario;
-	    
-	    private String clave;
-	    
-	    private String urlImagen;
-	    
-	    @ManyToOne
-	    @JoinColumn(name = "tipo", nullable = false)
-	    private TipoEntity tipo;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer codigo;
+
+	private String nombre;
+
+	private String apellido;
+
+	private Integer edad;
+
+	private String usuario;
+
+	private String clave;
+
+	private String urlImagen;
+
+	@ManyToOne
+	@JoinColumn(name = "tipo", nullable = false)
+	private TipoEntity tipo;
+
+	// Constructor que inicializa el tipo de empleado por defecto
+	public UsuarioEntity() {
+
+		this.tipo = new TipoEntity(2, "Tipo de usuario por defecto");
+	}
 }

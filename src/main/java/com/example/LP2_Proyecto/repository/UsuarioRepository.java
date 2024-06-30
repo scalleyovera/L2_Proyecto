@@ -7,5 +7,7 @@ import com.example.LP2_Proyecto.entity.UsuarioEntity;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Integer> {
-   UsuarioEntity findByCodigo(Integer codigo);
+	UsuarioEntity findByCodigo(Integer codigo);
+	
+	UsuarioEntity findByUsuarioAndClave(String usuario, String clave);
 }

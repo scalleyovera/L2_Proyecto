@@ -7,14 +7,12 @@ import com.example.LP2_Proyecto.entity.UsuarioEntity;
 
 import jakarta.servlet.http.HttpSession;
 
-
-
 public interface UsuarioService {
-	
-	void crearUsuario(UsuarioService usuarioService, Model model, MultipartFile foto);
-	
+
+	void crearUsuario(UsuarioEntity usuarioEntity, Model model, MultipartFile foto);
+
 	boolean validarUsuario(UsuarioEntity usuarioEntity, HttpSession session);
-	
+
 	UsuarioEntity buscarUsuarioPorCodigo(Integer codigo);
 
 }
