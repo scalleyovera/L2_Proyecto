@@ -10,4 +10,6 @@ public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Integer>
 	UsuarioEntity findByCodigo(Integer codigo);
 	
 	UsuarioEntity findByUsuarioAndClave(String usuario, String clave);
+	
+	UsuarioEntity findByUsuario(String usuario);
 }

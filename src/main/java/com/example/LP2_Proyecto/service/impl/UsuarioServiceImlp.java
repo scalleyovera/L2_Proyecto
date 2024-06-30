@@ -52,7 +52,7 @@ public class UsuarioServiceImlp implements UsuarioService {
 
 	@Override
 	public boolean validarUsuario(UsuarioEntity usuarioEntity, HttpSession session) {
-	    UsuarioEntity usuarioEncontrado = usuarioRepository.findByUsuarioAndClave(usuarioEntity.getUsuario(), usuarioEntity.getClave());
+	    UsuarioEntity usuarioEncontrado = usuarioRepository.findByUsuario(usuarioEntity.getUsuario());
 	    System.out.println("Usuario encontrado: " + usuarioEncontrado);
 	    if (usuarioEncontrado == null) {
 	        return false;
