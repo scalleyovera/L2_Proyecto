@@ -57,15 +57,21 @@ public class UsuarioServiceImlp implements UsuarioService {
 	    if (usuarioEncontrado == null) {
 	        return false;
 	    }
-	    
+
 	    // Validar si el pássword hace match con el password de base de datos
 	    if (!Utilitarios.checkPassword(usuarioEntity.getClave(), usuarioEncontrado.getClave())) {
 	        return false;
 	    }
-	    
+
 	    session.setAttribute("usuario", usuarioEncontrado.getCodigo());
+		session.setAttribute("tipo", usuarioEncontrado.getTipo().getIdtipo());
 	    return true;
 	}
+
+
+
+
+
 
 	@Override
 	public UsuarioEntity buscarUsuarioPorCodigo(Integer codigo) {

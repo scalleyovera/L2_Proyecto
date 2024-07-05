@@ -65,10 +65,18 @@ public class UsuarioController {
 	        // Supongamos que el usuario autenticado se guarda en la sesión
 	    	boolean usuario = usuarioService.validarUsuario(usuarioEntity, session);
 
-	        if (usuario) {
-	            String menuH = menuUtil.generarMenu(usuarioEntity);
+			//Revisando si el usuario pasa
+			Integer cod = (Integer) session.getAttribute("usuario");
+			System.out.println("El codigo de usuario es " + cod);
+			//Traigo el tipo de usuario
+
+			Integer tipo = (Integer) session.getAttribute("tipo");
+	        if (usuario = true) {
+	            String menuH = menuUtil.generarMenu(usuarioEntity, tipo, session);
 	            model.addAttribute("menuH", menuH);
-	        }
+	        } else {
+				System.out.println("No se encuentra usuario true  " + cod);
+			}
 
 	        return "menu";
 	    }

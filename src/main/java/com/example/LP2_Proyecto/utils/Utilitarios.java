@@ -34,4 +34,6 @@ public class Utilitarios {
 	public static boolean checkPassword(String passwordInput, String hashPassword) {
 		return BCrypt.checkpw(passwordInput, hashPassword);
 	}
+
+
 }

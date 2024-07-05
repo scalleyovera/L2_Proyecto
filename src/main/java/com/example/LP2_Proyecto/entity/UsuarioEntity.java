@@ -1,12 +1,6 @@
 package com.example.LP2_Proyecto.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,10 +8,11 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "tb_usuario")
+@Table(name = "tb_usuarios")
 @Getter
 @Setter
 @AllArgsConstructor
+
 
 @ToString
 public class UsuarioEntity {
@@ -36,6 +31,7 @@ public class UsuarioEntity {
 
 	private String clave;
 
+	@Column(name = "urlImagen")
 	private String urlImagen;
 
 	@ManyToOne
