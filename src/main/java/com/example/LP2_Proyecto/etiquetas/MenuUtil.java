@@ -13,8 +13,7 @@ public class MenuUtil {
         //Traigo el tipo de usuario para solo manejar Integer
         Integer tipoUsuario = (Integer) sesion.getAttribute("tipo");
 
-        //Valido el usuario en consola
-
+        //Valido si el Tipo de usuario de UsuarioController llego al método generarMenu
         System.out.println("(Para el menu) -> tipo de usuario es " + tipoUsuario);
 
         // Ejemplo de menú común para todos los usuarios

@@ -68,9 +68,11 @@ public class UsuarioController {
 			//Revisando si el usuario pasa
 			Integer cod = (Integer) session.getAttribute("usuario");
 			System.out.println("El codigo de usuario es " + cod);
-			//Traigo el tipo de usuario
 
+			//Guardo el Tipo de usuario en sesion para llevarlo a MenuHtml
 			Integer tipo = (Integer) session.getAttribute("tipo");
+
+
 	        if (usuario = true) {
 	            String menuH = menuUtil.generarMenu(usuarioEntity, tipo, session);
 	            model.addAttribute("menuH", menuH);
