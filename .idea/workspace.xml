@@ -5,7 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffc602f0-68a8-4060-9f17-a99911e611f1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.factorypath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.springframework.ide.eclipse.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/prueba.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/src/main/java/com/example/LP2_Proyecto/Lp2ProyectoApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/src/test/java/com/example/LP2_Proyecto/Lp2ProyectoApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prueba.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pruebita.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/controller/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/entity/BocaditoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/entity/CabBoletaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/entity/TipoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/entity/TortaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/entity/UsuarioEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/etiquetas/MenuUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/repository/TipoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/repository/UsuarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/service/UsuarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/service/impl/UsuarioServiceImlp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/LP2_Proyecto/utils/Utilitarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/Plogin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/backgraund.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/footer/facebook.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/footer/instagram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/footer/tuiter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/ps.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/usuario.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/usuario_foto/Perfil.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/usuario_foto/daniel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/usuario_foto/itis daniel calle.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/usuario_foto/mona_china.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/registrar_usuario.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +74,7 @@
   "keyToString": {
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "G:/DANIEL_LOCAL/GITHUB/L2_Proyecto"
