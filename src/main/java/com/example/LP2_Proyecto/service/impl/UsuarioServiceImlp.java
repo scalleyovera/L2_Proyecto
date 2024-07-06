@@ -1,5 +1,7 @@
 package com.example.LP2_Proyecto.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -73,6 +75,34 @@ public class UsuarioServiceImlp implements UsuarioService {
 	public UsuarioEntity buscarUsuarioPorCodigo(Integer codigo) {
 		// TODO Auto-generated method stub
 		return usuarioRepository.findByCodigo(codigo);
+	}
+
+
+	@Override
+	public List<UsuarioEntity> buscarTodosUsuarios() {
+		// TODO Auto-generated method stub
+		return usuarioRepository.findAll();
+	}
+
+
+	@Override
+	public void guardarTrabajador(UsuarioEntity usu, Model model, MultipartFile foto) {
+		// Guardar foto
+		String nombreFoto = Utilitarios.guardarImagen(foto);
+
+		usu.setUrlImagen(nombreFoto);
+
+		// Hash password
+		String passwordHash = Utilitarios.extraerHash(usu.getClave());
+		usu.setClave(passwordHash);
+		usuarioRepository.save(usu);
+	}
+
+
+	@Override
+	public void eliminarUsuario(Integer id) {
+		// TODO Auto-generated method stub
+		usuarioRepository.deleteById(id);
 	}
 
 }

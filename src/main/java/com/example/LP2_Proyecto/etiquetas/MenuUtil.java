@@ -25,8 +25,8 @@ public class MenuUtil {
         if (tipoUsuario == 1) {
             System.out.println("Se crea menu para trabajador");
             menu.append("<li><a href='/agregar_torta'>Mantenimiento Torta</a></li>");
-            menu.append("<li><a href='/trabajador/reportes'>Mantenimiento Bocaditos</a></li>");
-            menu.append("<li><a href='/trabajador/reportes'>Mantenimiento Usuarios</a></li>");
+            menu.append("<li><a href='/t'>Mantenimiento Bocaditos</a></li>");
+            menu.append("<li><a href='/agregar_usuario'>Mantenimiento Usuarios</a></li>");
         }
 
         // Menú específico para clientes
