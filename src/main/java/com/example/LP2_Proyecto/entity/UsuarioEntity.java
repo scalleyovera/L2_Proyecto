@@ -3,7 +3,6 @@ package com.example.LP2_Proyecto.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -12,8 +11,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @AllArgsConstructor
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> pedro
 @ToString
 public class UsuarioEntity {
 
