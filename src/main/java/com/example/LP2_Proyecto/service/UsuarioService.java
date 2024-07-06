@@ -1,5 +1,7 @@
 package com.example.LP2_Proyecto.service;
 
+import java.util.List;
+
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,5 +16,8 @@ public interface UsuarioService {
 	boolean validarUsuario(UsuarioEntity usuarioEntity, HttpSession session);
 
 	UsuarioEntity buscarUsuarioPorCodigo(Integer codigo);
-
+	
+	List<UsuarioEntity>buscarTodosUsuarios();
+	public void guardarTrabajador(UsuarioEntity usu, Model model, MultipartFile foto);
+	void eliminarUsuario(Integer id);
 }

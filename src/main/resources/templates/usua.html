@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-sm-4">
+            <h1>Gestión de Usuarios</h1>
+            <form th:action="@{/registrar_usuario}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="codigo">Código:</label>
+                    <input type="text" name="codigo" th:field="${usu.codigo}" class="form-control" id="codigo" placeholder="Ingrese código del usuario" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" th:field="${usu.nombre}" class="form-control" id="nombre" placeholder="Ingrese nombre del usuario">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" th:field="${usu.apellido}" class="form-control" id="apellido" placeholder="Ingrese apellido del usuario">
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" name="edad" th:field="${usu.edad}" class="form-control" id="edad" placeholder="Ingrese edad del usuario">
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo:</label>
+                    <input type="number" name="tipo" th:field="${usu.tipo}" class="form-control" id="tipo" placeholder="Ingrese tipo de usuario">
+                </div>
+                <div class="form-group">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" name="usuario" th:field="${usu.usuario}" class="form-control" id="usuario" placeholder="Ingrese usuario">
+                </div>
+                <div class="form-group">
+                    <label for="clave">Clave:</label>
+                    <input type="password" name="clave" th:field="${usu.clave}" class="form-control" id="clave" placeholder="Ingrese clave">
+                </div>
+                <div class="form-group">
+                    <label for="url_imagen">Foto:</label>
+                    <input type="file" id="url_imagen" name="foto" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary" name="btnOpcion" value="reg">Registrar</button>
+                <button type="submit" class="btn btn-primary" name="btnOpcion" value="act">Actualizar</button>
+                <button type="submit" class="btn btn-danger" name="btnOpcion" value="eli">Eliminar</button>
+                <button type="submit" class="btn btn-warning" name="btnOpcion" value="lst">Listado</button>
+            </form>
+            <br>
+            <div th:class="${estilo}" role="alert" th:text="${mensaje}"></div>
+        </div>
+        <div class="col-6 col-sm-8">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Acción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="u : ${usua}">
+                    <td><img th:src="${'/usuario_foto/'+ u.urlImagen}" width="50px" alt="Foto del usuario"></td>
+                    <td th:text="${u.codigo}"></td>
+                    <td th:text="${u.nombre}"></td>
+                    <td th:text="${u.apellido}"></td>
+                    <td th:text="${u.edad}"></td>
+                    <td th:text="${u.tipo.descripcion}"></td>
+                    <td th:text="${u.usuario}"></td>
+                    <td>
+                        <a th:href="@{/usuarios/editar/{id}(id=${u.codigo})}" class="btn btn-outline-primary">Editar</a>
+                        <a th:href="@{/usuarios/eliminar/{id}(id=${u.codigo})}" class="btn btn-outline-danger">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

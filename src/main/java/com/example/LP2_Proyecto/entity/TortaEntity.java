@@ -1,6 +1,8 @@
 package com.example.LP2_Proyecto.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -19,7 +21,8 @@ import lombok.ToString;
 public class TortaEntity {
 	
 	@Id
-    private String idtorta;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idtorta;
     
     private String nombre;
     
@@ -28,5 +31,7 @@ public class TortaEntity {
     private Integer stock;
     
     private double precio;
+    
+    private String urlImagen;
 
 }
