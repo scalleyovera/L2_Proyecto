@@ -1,3 +1,4 @@
+
 package com.example.LP2_Proyecto.service.impl;
 
 import java.util.List;
@@ -21,5 +22,10 @@ public class TipoServiceImpl implements TipoService{
 		return tipoRepository.findAll();
 	}
 
-	
+	@Override
+	public TipoEntity findTipoById(Integer id) {
+		// TODO Auto-generated method stub
+		return tipoRepository.findById(id).orElse(null);
+	}
+
 }

@@ -6,5 +6,6 @@ import com.example.LP2_Proyecto.entity.TipoEntity;
 
 public interface TipoService {
 	List<TipoEntity> findAllTipos();
+	TipoEntity findTipoById(Integer id);
 
 }

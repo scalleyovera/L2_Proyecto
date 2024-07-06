@@ -132,6 +132,9 @@
 				</ul>
 			</header>
 		</div>
+		<div class="container mt-4">
+			<div th:utext="${tiendaHtml}"></div>
+		</div>
 		<br>
 		<main>
 			<div class="container mt-4">
@@ -143,7 +146,7 @@
 						<img alt="" src="img/vacio.png">
 						<p>
 							Su carrito de compras está vacío. Haga clic en
-							<a th:href="@{/menu}">catálogo</a> para buscar productos
+							<a th:href="@{/menu}">menu</a> para buscar productos
 						</p>
 					</div>
 					<div th:class="${estilo}" role="alert" th:text="${mensaje}"></div>

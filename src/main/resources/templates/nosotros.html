@@ -131,93 +131,46 @@
 							</li>
 						</ul>
 					</li>
+					<li class="nav-item dropdown">
+						<a class='nav-link dropdown' th:href="@{/tienda}" data-toggle="modal"
+							data-target="#exampleModal">
+							<img src="img/car.png" alt="Carrito" style="width: 50px; height: 50px; object-fit: cover;">
+							<span th:text="${cant_carrito}" class="badge badge-danger"></span>
+						</a>
+					</li>
 				</ul>
 			</header>
 		</div>
+
 		<div class="container mt-4">
-			<!-- Aquí podría ir tu menú según el rol -->
-			<div th:utext="${menuAgre}"></div>
+			<div th:utext="${nosotroHtml}"></div>
 		</div>
-
-		<div class="container">
-			<h1>Mantenimiento de Tortas</h1>
-			<div class="row">
-				<div class="col-md-4">
-					<form th:action="@{/registrar_torta}" method="post">
-						<div class="form-group">
-							<label for="codigo">Código:</label>
-							<input type="text" name="codigo" th:field="${torta.idtorta}" class="form-control"
-								id="codigo" placeholder="Codigo autogenerado" readonly>
-						</div>
-						<div class="form-group">
-							<label for="nombre">Nombre de Torta:</label>
-							<input type="text" name="nombre" th:field="${torta.nombre}" class="form-control" id="nombre"
-								placeholder="Ingrese nombre de la torta">
-						</div>
-						<div class="form-group">
-							<label for="descripcion">Descripción de Torta:</label>
-							<input type="text" name="descripcion" th:field="${torta.descripcion}" class="form-control"
-								id="descripcion" placeholder="Ingrese descripción de la torta">
-						</div>
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="stock">Stock:</label>
-								<input type="number" min="0" name="stock" th:field="${torta.stock}" class="form-control"
-									id="stock" placeholder="0">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="precio">Precio:</label>
-								<input type="number" min="0" name="precio" th:field="${torta.precio}" step="0.01"
-									class="form-control" id="precio" placeholder="0.00">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="foto">Foto:</label>
-							<input type="text" id="foto" name="foto" th:field="${torta.urlImagen}" class="form-control"
-								placeholder="URL de la imagen">
-						</div>
-						<button type="submit" class="btn btn-primary">Registrar</button>
-
-						<form th:action="@{/actualizar}" method="post" class="mt-2">
-							<input type="hidden" name="idTorta" th:value="${torta.idtorta}">
-							<button type="submit" class="btn btn-success">Actualizar</button>
-						</form>
-						<a th:href="@{/agregar_torta}" class="btn btn-warning mt-2">Listado</a>
-						<div th:class="${estilo}" role="alert" th:text="${mensaje}" class="alert alert-info mt-4"></div>
-					</form>
-				</div>
-				<div class="col-md-8">
-					<table class="table table-hover">
-						<thead class="thead-dark">
-							<tr>
-								<th scope="col">Imagen</th>
-								<th scope="col">Código</th>
-								<th scope="col">Nombre</th>
-								<th scope="col">Descripción</th>
-								<th scope="col">Stock</th>
-								<th scope="col">Precio</th>
-								<th scope="col">Acción</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="t : ${tortas}">
-								<td><img th:src="${t.urlImagen}" width="100px" alt="producto"></td>
-								<td th:text="${t.idtorta}"></td>
-								<td th:text="${t.nombre}"></td>
-								<td th:text="${t.descripcion}"></td>
-								<td th:text="${t.stock}"></td>
-								<td th:text="${t.precio}"></td>
-								<td><a th:href="@{/editar/{id}(id=${t.idtorta})}"
-										class="btn btn-outline-primary">Editar</a>
-									<a th:href="@{/delete/{id}(id=${t.idtorta})}"
-										class="btn btn-outline-danger mt-2">Eliminar</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
+		<br>
+		<main>
+			<section class="products container" id="lista-1">
+				<h2>
+					<strong>Descubre nuestra historia, conoce nuestro equipo y<br>sumérgete en nuestro mundo de pasión y
+						excelencia.</strong>
+				</h2>
+				<br>
+				<img src="img/Conocenos.jpg" alt="Imagen no encontrada">
+				<br>
+				<br>
+				<p>¡Bienvenido a nuestra dulce aventura pastelera! Únete a nosotros en este mundo lleno de delicias y
+					sabores exquisitos.
+					Descubre quiénes somos, nuestra pasión por la repostería y por qué para nosotros no solo somos una
+					pastelería, ¡somos mucho más que eso!
+					Forma parte de nuestro equipo de amantes de la repostería, dedicados a brindarte la mejor
+					experiencia dulce.
+					Conoce nuestra historia, desde nuestros inicios hasta convertirnos en un referente en el mundo de
+					los postres.
+					Sumérgete en nuestra cultura, donde la calidad, la variedad y el servicio al cliente son nuestra
+					máxima prioridad.
+					Cada dulce es seleccionado con esmero para ofrecerte lo mejor en cada bocado. ¡Déjate conquistar por
+					nuestros deliciosos pasteles y postres!.</p>
+			</section>
+			<br>
+		</main>
 		<footer>
 			<div class="contenedor-footer">
 				<div class="content-foot">
