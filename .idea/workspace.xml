@@ -27,6 +27,7 @@
   "keyToString": {
     "Application.Unnamed.executor": "Run",
     "JUnit.All in LP2_Proyecto.executor": "Run",
+    "JUnit.Lp2ProyectoApplicationTests.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -37,7 +38,7 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.All in LP2_Proyecto">
+  <component name="RunManager" selected="JUnit.Lp2ProyectoApplicationTests">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.LP2_Proyecto.Lp2ProyectoApplication" />
       <module name="LP2_Proyecto" />
@@ -53,8 +54,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Lp2ProyectoApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LP2_Proyecto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.LP2_Proyecto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.LP2_Proyecto" />
+      <option name="MAIN_CLASS_NAME" value="com.example.LP2_Proyecto.Lp2ProyectoApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Lp2ProyectoApplicationTests" />
         <item itemvalue="JUnit.All in LP2_Proyecto" />
       </list>
     </recent_temporary>
