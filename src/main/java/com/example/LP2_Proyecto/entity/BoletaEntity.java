@@ -4,34 +4,33 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Entity
-@Table(name = "tb_torta")
+@Table(name = "tb_boleta")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-public class TortaEntity {
-	
+public class BoletaEntity {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idtorta;
-    
-    private String nombre;
-    
-    private String descripcion;
-    
-    private Integer stock;
-    
-    private double precio;
-    
-    private String urlImagen;
-
+	private Integer boletaId;
+	
+	private Integer cantidad;
+	
+	@ManyToOne
+	@JoinColumn(name = "torta_id", nullable = false)
+	private TortaEntity tortaEntity;
+	
+	@ManyToOne
+	@JoinColumn(name = "pedido_id", nullable = false)
+	private PedidoEntity pedidoEntity;
 }

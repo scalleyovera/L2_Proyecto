@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.LP2_Proyecto.entity.UsuarioEntity;
-import com.example.LP2_Proyecto.etiquetas.MenuUtil;
 import com.example.LP2_Proyecto.service.UsuarioService;
 
 import jakarta.servlet.http.HttpSession;
@@ -44,7 +43,7 @@ public class UsuarioController {
 	public String login(UsuarioEntity usuarioEntity, Model model, HttpSession session) {
 		boolean usuarioValido = usuarioService.validarUsuario(usuarioEntity, session);
 		if (usuarioValido) {
-			return "redirect:/menuHtml";
+			return "redirect:/menu";
 		}
 		model.addAttribute("loginInvalido", "Usuario No Existe");
 		model.addAttribute("usuario", new UsuarioEntity());
@@ -57,19 +56,4 @@ public class UsuarioController {
 		return "redirect:/";
 	}
 	
-	 @Autowired
-	    private MenuUtil menuUtil;
-
-	    @GetMapping("/menuHtml")
-	    public String menuHtml(UsuarioEntity usuarioEntity,Model model, HttpSession session) {
-	        // Supongamos que el usuario autenticado se guarda en la sesión
-	    	boolean usuario = usuarioService.validarUsuario(usuarioEntity, session);
-
-	        if (usuario) {
-	            String menuH = menuUtil.generarMenu(usuarioEntity);
-	            model.addAttribute("menuH", menuH);
-	        }
-
-	        return "menu";
-	    }
 }

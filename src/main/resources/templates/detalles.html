@@ -53,16 +53,6 @@
 		/* Mantiene la relación de aspecto y recorta la imagen si es necesario */
 	}
 
-	section {
-		color: #010101;
-		/* Cambia el color del texto a un tono naranja */
-		font-family: 'McLaren', sans-serif;
-		/* Cambia la fuente a Arial o a la que prefieras */
-		font-size: 30px;
-		/* Aumenta el tamaño de la fuente */
-		/* Ajusta el espaciado entre líneas */
-	}
-
 	footer {
 		background-color: #414141;
 		padding: 60px 0 30px 0;
@@ -132,7 +122,8 @@
 						</ul>
 					</li>
 					<li class="nav-item dropdown">
-						<a class='nav-link dropdown' th:href="@{/tienda}" data-toggle="modal" data-target="#exampleModal">
+						<a class='nav-link dropdown' th:href="@{/tienda}" data-toggle="modal"
+							data-target="#exampleModal">
 							<img src="img/car.png" alt="Carrito" style="width: 50px; height: 50px; object-fit: cover;">
 							<span th:text="${cant_carrito}" class="badge badge-danger"></span>
 						</a>
@@ -141,42 +132,61 @@
 			</header>
 		</div>
 		<div class="container mt-4">
-		    <!-- Aquí podría ir tu menú según el rol -->
-		    <div th:utext="${menuH}"></div>
+			<!-- Aquí podría ir tu menú según el rol -->
+
 		</div>
 		<br>
 		<main>
-			<section class="products container" id="lista-1">
-				<h2>
-					<strong>Disfruta de los Pasteles especiales que tenemos <br>
-						para tí.
-					</strong>
-				</h2>
-				<br> <img style="border: 2px solid #000; border-radius: 20px;" src="img/catalogo/CatalogoBanner.jpg"
-					alt="Imagen no encontrada"> <br>
-			</section>
 			<div class="container mt-4">
-				<h1>Las mejores Tortas</h1>
-				<div class="row">
-					<div th:each="torta : ${tortas}" class="col-sm-4">
-						<div class="card">
-							<div class="card-header">
-								<h4 th:text="${torta.nombre}"></h4>
+				<section class="w-75 mx-auto">
+					<fieldset class="p-4 rounded bg-light fieldset-hover">
+						<legend class="px-2 text-center" style="background-color: silver; color: red;">
+							Detalle de la torta
+						</legend>
+						<div class="row">
+							<div class="col-md-6">
+								<img class="img-fluid" alt="producto" th:src="${torta.urlImagen}">
 							</div>
-							<div class="card-body">
-								<i>S/<span th:text="${torta.precio}"></span></i>
-								<img th:alt="'torta'" th:src="${torta.urlImagen}" width="200" height="180">
-							</div>
-							<div class="card-footer">
-								<label th:text="${torta.descripcion}"></label>
-								<div>
-									<a th:href="@{/obtener(cod=${torta.idtorta})}" class="btn btn-danger">Detalles</a>
-								</div>
+							<div class="col-md-6">
+								<form th:action="@{/venta}" method="post">
+									<div class="mb-3">
+										<label class="form-label">Cod torta:</label>
+										<input name="idTorta" type="hidden" th:value="${torta.idtorta}">
+										<strong th:text="${torta.idtorta}"></strong>
+										<a href="#"><img src="img/lupa.png" alt=""></a>
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Nombre :</label>
+										<strong th:text="${torta.nombre}"></strong>
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Descripcion :</label>
+										<strong th:text="${torta.descripcion}"></strong>
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Precio :</label>
+										<strong style="color: red;">
+											S/. <span th:text="${torta.precio}"></span>
+										</strong>
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Cantidad a comprar: </label>
+										<input type="number" value="1" name="cantidad" min="1" th:max="${torta.stock}"
+											class="text-center">
+										<span th:text="'Total disponible ' + ${torta.stock}"></span>
+									</div>
+									<div class="mb-3">
+										<button class="btn btn-primary">
+											Agregar a la tienda
+											<span class="glyphicon glyphicon-shopping-cart"></span>
+										</button>
+									</div>
+								</form>
 							</div>
 						</div>
-						<br>
-					</div>
-				</div>
+					</fieldset>
+					<br>
+				</section>
 			</div>
 		</main>
 		<footer>
