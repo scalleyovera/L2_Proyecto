@@ -1,7 +1,7 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
+# Documentación para la acción de despliegue en Azure Web Apps: https://github.com/Azure/webapps-deploy
+# Más acciones de GitHub para Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - dulceaventura
+name: Construir y desplegar aplicación JAR en Azure Web App - dulceaventura
 
 on:
   push:
@@ -16,15 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java version
+      - name: Configurar la versión de Java
         uses: actions/setup-java@v1
         with:
           java-version: '17'
 
-      - name: Build with Maven
+      - name: Construir con Maven
         run: mvn clean install
 
-      - name: Upload artifact for deployment job
+      - name: Subir artefacto para el trabajo de despliegue
         uses: actions/upload-artifact@v3
         with:
           name: java-app
@@ -34,29 +34,27 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'Producción'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
-  
+      id-token: write # Esto es necesario para solicitar el JWT
+
     steps:
-      - name: Download artifact from build job
+      - name: Descargar artefacto del trabajo de construcción
         uses: actions/download-artifact@v3
         with:
           name: java-app
-      
-      - name: Login to Azure
+
+      - name: Iniciar sesión en Azure
         uses: azure/login@v1
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CC5959851F5049B0B3EA142236F9ADFA }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3D8BDC3AAADB4B7FAF5ADC95A87A6934 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C773A0BA333F400FA408221C48E817B1 }}
-
-      - name: Deploy to Azure Web App
+      - name: Desplegar en Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'dulceaventura'
-          slot-name: 'Production'
+          slot-name: 'Producción'
           package: '*.jar'
-          
